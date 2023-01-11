@@ -1,0 +1,2128 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Script zum automatisierten Abzug von Kursdaten &amp; Tweet-Klassifizierung zu Kryptowährung &#8212; My sample book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Web &amp; - Social Media Analytics Projekt:" href="Visualization.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Script zum automatisierten Abzug von Kursdaten &amp; Tweet-Klassifizierung zu Kryptowährung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Visualization.html">
+   Web &amp; - Social Media Analytics Projekt:
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/CryptoKursGesamt.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FCryptoKursGesamt.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/CryptoKursGesamt.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   1. Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skript-zum-automatisierten-abzug-der-wahrungsinformationen">
+   2. Skript zum automatisierten Abzug der Währungsinformationen
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#webcrawling">
+     2.1 Webcrawling
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methode-zum-erstellen-der-historie">
+     2.2 Methode zum Erstellen der Historie
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#anwenden-der-methode-erstellen-der-historie">
+     2.3 Anwenden der Methode, Erstellen der Historie
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#script-zum-automatisierten-abzug-von-tweets">
+   3. Script zum automatisierten Abzug von Tweets
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methode-zum-abrufen-der-twitter-api">
+     3.1 Methode zum Abrufen der Twitter API
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ausfuhren-der-methode-abspeichern-der-daten">
+     3.2 Ausführen der Methode &amp; Abspeichern der Daten
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sentiment-analysis">
+     3.3 Sentiment Analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Script zum automatisierten Abzug von Kursdaten & Tweet-Klassifizierung zu Kryptowährung</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   1. Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skript-zum-automatisierten-abzug-der-wahrungsinformationen">
+   2. Skript zum automatisierten Abzug der Währungsinformationen
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#webcrawling">
+     2.1 Webcrawling
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methode-zum-erstellen-der-historie">
+     2.2 Methode zum Erstellen der Historie
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#anwenden-der-methode-erstellen-der-historie">
+     2.3 Anwenden der Methode, Erstellen der Historie
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#script-zum-automatisierten-abzug-von-tweets">
+   3. Script zum automatisierten Abzug von Tweets
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methode-zum-abrufen-der-twitter-api">
+     3.1 Methode zum Abrufen der Twitter API
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ausfuhren-der-methode-abspeichern-der-daten">
+     3.2 Ausführen der Methode &amp; Abspeichern der Daten
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sentiment-analysis">
+     3.3 Sentiment Analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="script-zum-automatisierten-abzug-von-kursdaten-tweet-klassifizierung-zu-kryptowahrung">
+<h1>Script zum automatisierten Abzug von Kursdaten &amp; Tweet-Klassifizierung zu Kryptowährung<a class="headerlink" href="#script-zum-automatisierten-abzug-von-kursdaten-tweet-klassifizierung-zu-kryptowahrung" title="Permalink to this headline">#</a></h1>
+<p>Das folgende Script soll auf einem Linuxserver via Cronjob automatisiert alle 30 Minuten ausgeführt werden.<br />
+Im ersten Schritt werden bei jeder Ausführung die aktuellen Kursdaten (bspw. aktueller Kurs, Marktkapitalisierung) zu den relevantesten Krypto Währungen von der Internetseite <a class="reference external" href="https://crypto.com/price">https://crypto.com/price</a> abgezogen, aufbereitet und in eine .csv Datei abgespeichert.<br />
+Anschließend werden über die Twitter-API Tweets zu den zuvor ausgelesenen Kryptowährungen abgezogen und mit Hilfe der Bibliothek “TextBlob” einer Sentiment Analysis unterzogen.</p>
+<p>Bei jeder Ausführung des Scripts werden die neuen Informationen (Kursdaten &amp; Tweet-Klassifizierungen) in die jeweiligen .csv Dateien angehängt, sodass eine fortlaufende Historie entsteht.</p>
+<p>Die hierbei entstehenden .csv Dateien sollen dann im Anschluss zur Analyse verwendet werden. Die Analyse findet in einem anderen Jupyter Notebook statt, welches nicht auf dem Server ausgeführt werden muss.</p>
+<section id="setup">
+<h2>1. Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h2>
+<p>Zuerst müssen die notwendigen Module oder libraries importiert werden. der folgende Code ist nur für die Ausführung auf einem lokalen Rechner relevant. Damit das Script auf dem Linux Server läuft, wurden die Module manuell via pip auf dem Server installiert.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Basics</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="c1">#Webcrawling</span>
+<span class="c1">#pip install beautifulsoup4</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Für Twitter Abzug &amp; Klassifizierung</span>
+<span class="kn">import</span> <span class="nn">tweepy</span>
+<span class="kn">from</span> <span class="nn">tweepy</span> <span class="kn">import</span> <span class="n">OAuthHandler</span>
+<span class="kn">from</span> <span class="nn">tweepy</span> <span class="kn">import</span> <span class="n">Stream</span>
+<span class="kn">from</span> <span class="nn">textblob</span> <span class="kn">import</span> <span class="n">TextBlob</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="skript-zum-automatisierten-abzug-der-wahrungsinformationen">
+<h2>2. Skript zum automatisierten Abzug der Währungsinformationen<a class="headerlink" href="#skript-zum-automatisierten-abzug-der-wahrungsinformationen" title="Permalink to this headline">#</a></h2>
+<section id="webcrawling">
+<h3>2.1 Webcrawling<a class="headerlink" href="#webcrawling" title="Permalink to this headline">#</a></h3>
+<p>Zu Beginn wird eine Funktion definiert, welche die aktuellen Kursdaten zu den relevantesten Kryptowährungen von der Internetseite <a class="reference external" href="https://crypto.com/price">https://crypto.com/price</a> abzieht.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Erstellen der Funktion zum crawlen der aktuellen Kursdaten</span>
+<span class="k">def</span> <span class="nf">get_crypto</span><span class="p">(</span><span class="n">URL</span><span class="p">):</span>
+    <span class="n">CryptoDF</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+    <span class="n">soup</span><span class="o">=</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">,</span><span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+    <span class="c1"># in der folgenden Schleife werden aus den relevanten html Elementen &quot;table&quot; die benötigten Informationen </span>
+    <span class="c1"># zum zuvor erstellen &quot;CryptoDF&quot; hinzugefügt</span>
+    <span class="k">for</span> <span class="n">currency</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;table&quot;</span> <span class="p">,</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;chakra-table css-1qpk7f7&quot;</span><span class="p">})</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;tr&quot;</span><span class="p">):</span>
+        <span class="n">CryptoList</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">currency</span><span class="o">.</span><span class="n">findAll</span><span class="p">([</span><span class="s2">&quot;p&quot;</span><span class="p">,</span><span class="s2">&quot;span&quot;</span><span class="p">,</span><span class="s2">&quot;div&quot;</span><span class="p">,</span><span class="s2">&quot;td&quot;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;.css&quot;</span><span class="p">):</span>
+                <span class="k">continue</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">CryptoList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">CryptoDF</span> <span class="o">=</span> <span class="n">CryptoDF</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;Pos&quot;</span><span class="p">:</span><span class="n">CryptoList</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="s2">&quot;Name&quot;</span><span class="p">:</span><span class="n">CryptoList</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="s2">&quot;Short&quot;</span><span class="p">:</span><span class="n">CryptoList</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="s2">&quot;Price in $&quot;</span><span class="p">:</span><span class="n">CryptoList</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="s2">&quot;24h Change in %&quot;</span><span class="p">:</span><span class="n">CryptoList</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="s2">&quot;24h Volume in M$&quot;</span><span class="p">:</span><span class="n">CryptoList</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="s2">&quot;Market Cap in M$&quot;</span><span class="p">:</span><span class="n">CryptoList</span><span class="p">[</span><span class="mi">21</span><span class="p">]},</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">continue</span> 
+        <span class="c1"># zuletzt sollen nur die relevantesten 10 Währungen übernommen werden</span>
+        <span class="c1"># Relevanz wird hier als Marktkapitalisierung definiert, wonach die auf der Webseite aufgeführten Währungen bereits sortiert sind</span>
+        <span class="n">CryptoDF</span><span class="o">=</span> <span class="n">CryptoDF</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">CryptoDF</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nun kann die Funktion mit dem entsprechenden Link als Attribut aufgerufen werden, um so einen aktuellen Abzug der Kursdaten zu erzeugen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CryptoDF</span> <span class="o">=</span> <span class="n">get_crypto</span><span class="p">(</span><span class="s2">&quot;https://crypto.com/price&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CryptoDF</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Pos</th>
+      <th>Name</th>
+      <th>Short</th>
+      <th>Price in $</th>
+      <th>24h Change in %</th>
+      <th>24h Volume in M$</th>
+      <th>Market Cap in M$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Bitcoin</td>
+      <td>BTC</td>
+      <td>$17,530.62</td>
+      <td>+1.72%</td>
+      <td>$16.59 B</td>
+      <td>$333.94 B</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Ethereum</td>
+      <td>ETH</td>
+      <td>$1,360.44</td>
+      <td>+4.94%</td>
+      <td>$7.51 B</td>
+      <td>$163.96 B</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Tether</td>
+      <td>USDT</td>
+      <td>$1.02</td>
+      <td>-0.26%</td>
+      <td>$27.95 B</td>
+      <td>$66.26 B</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>BNB</td>
+      <td>BNB</td>
+      <td>$286.49</td>
+      <td>+5.01%</td>
+      <td>$803.75 M</td>
+      <td>$45.02 B</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>USD Coin</td>
+      <td>USDC</td>
+      <td>$1.00</td>
+      <td>+0.01%</td>
+      <td>$3.43 B</td>
+      <td>$44 B</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>XRP</td>
+      <td>XRP</td>
+      <td>$0.361</td>
+      <td>+3.61%</td>
+      <td>$1.24 B</td>
+      <td>$18 B</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>Binance USD</td>
+      <td>BUSD</td>
+      <td>$1.00</td>
+      <td>-0.09%</td>
+      <td>$6.35 B</td>
+      <td>$16.34 B</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>Cardano</td>
+      <td>ADA</td>
+      <td>$0.3277</td>
+      <td>+11.48%</td>
+      <td>$892.07 M</td>
+      <td>$11.12 B</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>Dogecoin</td>
+      <td>DOGE</td>
+      <td>$0.07958</td>
+      <td>+8.09%</td>
+      <td>$734.31 M</td>
+      <td>$10.43 B</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>Polygon</td>
+      <td>MATIC</td>
+      <td>$0.8852</td>
+      <td>+6.57%</td>
+      <td>$441.54 M</td>
+      <td>$7.59 B</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="methode-zum-erstellen-der-historie">
+<h3>2.2 Methode zum Erstellen der Historie<a class="headerlink" href="#methode-zum-erstellen-der-historie" title="Permalink to this headline">#</a></h3>
+<p>Als Nächstes sollen die abgezogenen Kursdaten zu einer Historie hinzugefügt werden, welche so den Kursverlauf über längere Zeit widerspiegelt.</p>
+<p>Folgende Codezeile ließt aus einer der “HistoryDF.csv” Datei das initial erstellte Dataframe ein. An diese .csv Datei werden in den folgenden Schritten die gecrawlten Daten angehängt und wieder abgespeichert. So entesteht in der “HistoryDF.csv” eine fortlaufende Historie der Währungsdaten.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HistoryDF</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;HistoryDF.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">HistoryDF</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>BTC</th>
+      <th>ETH</th>
+      <th>USDT</th>
+      <th>USDC</th>
+      <th>BNB</th>
+      <th>XRP</th>
+      <th>BUSD</th>
+      <th>DOGE</th>
+      <th>ADA</th>
+      <th>MATIC</th>
+      <th>timestamp</th>
+      <th>ValueCategory</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16845.38</td>
+      <td>1229.05</td>
+      <td>1.02</td>
+      <td>1.00</td>
+      <td>248.76</td>
+      <td>0.3494</td>
+      <td>1.00</td>
+      <td>0.07239</td>
+      <td>0.2576</td>
+      <td>0.7960</td>
+      <td>2023-01-03 13:48:15.025826</td>
+      <td>Price in $</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>11620.00</td>
+      <td>3010.00</td>
+      <td>15110.00</td>
+      <td>1630.00</td>
+      <td>296.00</td>
+      <td>927.0000</td>
+      <td>3250.00</td>
+      <td>256.00000</td>
+      <td>137.0000</td>
+      <td>154.0000</td>
+      <td>2023-01-03 13:48:15.040849</td>
+      <td>24h Volume in M$</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.02</td>
+      <td>0.02</td>
+      <td>0.11</td>
+      <td>-0.02</td>
+      <td>-0.60</td>
+      <td>0.4200</td>
+      <td>-0.00</td>
+      <td>-0.61000</td>
+      <td>0.1100</td>
+      <td>0.4400</td>
+      <td>2023-01-03 13:48:15.054823</td>
+      <td>24h Change in %</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>321950.00</td>
+      <td>148900.00</td>
+      <td>66310.00</td>
+      <td>44710.00</td>
+      <td>39280.00</td>
+      <td>17360.0000</td>
+      <td>16430.00</td>
+      <td>9490.00000</td>
+      <td>8780.0000</td>
+      <td>6820.0000</td>
+      <td>2023-01-03 13:48:15.067823</td>
+      <td>Market Cap in M$</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>16845.38</td>
+      <td>1229.05</td>
+      <td>1.02</td>
+      <td>1.00</td>
+      <td>248.76</td>
+      <td>0.3494</td>
+      <td>1.00</td>
+      <td>0.07239</td>
+      <td>0.2576</td>
+      <td>0.7960</td>
+      <td>2023-01-03 13:49:09.077439</td>
+      <td>Price in $</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1051</th>
+      <td>327410.00</td>
+      <td>154720.00</td>
+      <td>66280.00</td>
+      <td>43930.00</td>
+      <td>41960.00</td>
+      <td>17200.0000</td>
+      <td>16430.00</td>
+      <td>9520.00000</td>
+      <td>9910.0000</td>
+      <td>7020.0000</td>
+      <td>2023-01-08 18:00:04.508626</td>
+      <td>Market Cap in M$</td>
+    </tr>
+    <tr>
+      <th>1052</th>
+      <td>17161.82</td>
+      <td>1286.50</td>
+      <td>1.02</td>
+      <td>1.00</td>
+      <td>270.84</td>
+      <td>0.3443</td>
+      <td>1.00</td>
+      <td>0.07301</td>
+      <td>0.2960</td>
+      <td>0.8227</td>
+      <td>2023-01-08 18:30:03.748762</td>
+      <td>Price in $</td>
+    </tr>
+    <tr>
+      <th>1053</th>
+      <td>8360.00</td>
+      <td>2870.00</td>
+      <td>12200.00</td>
+      <td>1550.00</td>
+      <td>357.00</td>
+      <td>435.0000</td>
+      <td>2470.00</td>
+      <td>178.00000</td>
+      <td>322.0000</td>
+      <td>151.0000</td>
+      <td>2023-01-08 18:30:03.755303</td>
+      <td>24h Volume in M$</td>
+    </tr>
+    <tr>
+      <th>1054</th>
+      <td>0.13</td>
+      <td>0.47</td>
+      <td>0.31</td>
+      <td>0.01</td>
+      <td>1.94</td>
+      <td>-0.7500</td>
+      <td>0.12</td>
+      <td>0.11000</td>
+      <td>5.8600</td>
+      <td>0.4400</td>
+      <td>2023-01-08 18:30:03.760897</td>
+      <td>24h Change in %</td>
+    </tr>
+    <tr>
+      <th>1055</th>
+      <td>327150.00</td>
+      <td>155280.00</td>
+      <td>66460.00</td>
+      <td>43920.00</td>
+      <td>42590.00</td>
+      <td>17220.0000</td>
+      <td>16420.00</td>
+      <td>9570.00000</td>
+      <td>10030.0000</td>
+      <td>7060.0000</td>
+      <td>2023-01-08 18:30:03.766757</td>
+      <td>Market Cap in M$</td>
+    </tr>
+  </tbody>
+</table>
+<p>1056 rows × 12 columns</p>
+</div></div></div>
+</div>
+<p>Im nächsten Schritt wird eine Funktion definiert, welche zu einem im Funktionsaufruf anzugebenden Attribut aus dem obigen “CryptoDF” (bspw. “Price in $”) eine Zeile mit Zeitstempel erstellt.<br />
+Diese Zeile kann dann an das HistoryDF angehängt werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Funktion zum Erstellen eines Abzuges eines beliebigen Wertes mit aktueller Systemzeit </span>
+<span class="k">def</span> <span class="nf">create_snapshot</span><span class="p">(</span><span class="n">attribute</span><span class="p">):</span>
+    <span class="n">TransposedDF</span><span class="o">=</span><span class="n">CryptoDF</span><span class="p">[[</span><span class="s2">&quot;Short&quot;</span><span class="p">,</span><span class="n">attribute</span><span class="p">]]</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;index&#39;</span><span class="p">:</span><span class="s1">&#39;var&#39;</span><span class="p">})</span>
+    <span class="n">TransposedDF</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">TransposedDF</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">TransposedDF</span> <span class="o">=</span> <span class="n">TransposedDF</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">TransposedDF</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">TransposedDF</span> <span class="o">=</span> <span class="n">TransposedDF</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Short&quot;</span><span class="p">:</span> <span class="s2">&quot;ValueCategory&quot;</span><span class="p">})</span>
+    <span class="n">TransposedDF</span><span class="p">[</span><span class="s2">&quot;timestamp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">TransposedDF</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hier wird die Funktion nur beispielhaft aufgerufen, in der späteren Anwendung findet zuvor eine Bereinigung des CryptoDF statt, weswegen das im HistoryDF zu sehende Format etwas von dem Format aus der folgenden Codezeile abweicht.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Beispiel Nutzung der create_snapshot Funktion zum Abzug des Wertes &quot;Price&quot;</span>
+<span class="n">create_snapshot</span><span class="p">(</span><span class="s2">&quot;Price in $&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ValueCategory</th>
+      <th>BTC</th>
+      <th>ETH</th>
+      <th>USDT</th>
+      <th>BNB</th>
+      <th>USDC</th>
+      <th>XRP</th>
+      <th>BUSD</th>
+      <th>ADA</th>
+      <th>DOGE</th>
+      <th>MATIC</th>
+      <th>timestamp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Price in $</td>
+      <td>$17,530.62</td>
+      <td>$1,360.44</td>
+      <td>$1.02</td>
+      <td>$286.49</td>
+      <td>$1.00</td>
+      <td>$0.361</td>
+      <td>$1.00</td>
+      <td>$0.3277</td>
+      <td>$0.07958</td>
+      <td>$0.8852</td>
+      <td>2023-01-09 17:05:20.284652</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="anwenden-der-methode-erstellen-der-historie">
+<h3>2.3 Anwenden der Methode, Erstellen der Historie<a class="headerlink" href="#anwenden-der-methode-erstellen-der-historie" title="Permalink to this headline">#</a></h3>
+<p>Nun werden die zuvor definierten Funktionen angewendet.<br />
+Zuerst wird die Funktion zum crawlen der aktuellen Währungsinformationen ausgeführt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CryptoDF</span> <span class="o">=</span> <span class="n">get_crypto</span><span class="p">(</span><span class="s2">&quot;https://crypto.com/price&quot;</span><span class="p">)</span>
+<span class="n">CryptoDF</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Pos</th>
+      <th>Name</th>
+      <th>Short</th>
+      <th>Price in $</th>
+      <th>24h Change in %</th>
+      <th>24h Volume in M$</th>
+      <th>Market Cap in M$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Bitcoin</td>
+      <td>BTC</td>
+      <td>$17,511.05</td>
+      <td>+1.57%</td>
+      <td>$16.69 B</td>
+      <td>$333.61 B</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Ethereum</td>
+      <td>ETH</td>
+      <td>$1,361.07</td>
+      <td>+4.90%</td>
+      <td>$7.58 B</td>
+      <td>$164.05 B</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Tether</td>
+      <td>USDT</td>
+      <td>$1.02</td>
+      <td>-0.28%</td>
+      <td>$28.14 B</td>
+      <td>$66.26 B</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>BNB</td>
+      <td>BNB</td>
+      <td>$285.69</td>
+      <td>+4.99%</td>
+      <td>$804.82 M</td>
+      <td>$44.89 B</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>USD Coin</td>
+      <td>USDC</td>
+      <td>$1.00</td>
+      <td>-0.01%</td>
+      <td>$3.44 B</td>
+      <td>$44 B</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>XRP</td>
+      <td>XRP</td>
+      <td>$0.3597</td>
+      <td>+3.44%</td>
+      <td>$1.25 B</td>
+      <td>$17.99 B</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>Binance USD</td>
+      <td>BUSD</td>
+      <td>$1.00</td>
+      <td>-0.18%</td>
+      <td>$6.39 B</td>
+      <td>$16.33 B</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>Cardano</td>
+      <td>ADA</td>
+      <td>$0.3288</td>
+      <td>+11.69%</td>
+      <td>$894.47 M</td>
+      <td>$11.14 B</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>Dogecoin</td>
+      <td>DOGE</td>
+      <td>$0.07938</td>
+      <td>+8.01%</td>
+      <td>$743.43 M</td>
+      <td>$10.42 B</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>Polygon</td>
+      <td>MATIC</td>
+      <td>$0.8839</td>
+      <td>+6.35%</td>
+      <td>$445.12 M</td>
+      <td>$7.59 B</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Störende Zeichen werden an dieser Stelle bereits entfernt:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CryptoDF</span> <span class="o">=</span> <span class="n">CryptoDF</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="s1">&#39;%&#39;</span><span class="p">,</span><span class="s1">&#39;\$&#39;</span><span class="p">,</span><span class="s1">&#39;\,&#39;</span><span class="p">],</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">CryptoDF</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Pos</th>
+      <th>Name</th>
+      <th>Short</th>
+      <th>Price in $</th>
+      <th>24h Change in %</th>
+      <th>24h Volume in M$</th>
+      <th>Market Cap in M$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Bitcoin</td>
+      <td>BTC</td>
+      <td>17511.05</td>
+      <td>+1.57</td>
+      <td>16.69 B</td>
+      <td>333.61 B</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Ethereum</td>
+      <td>ETH</td>
+      <td>1361.07</td>
+      <td>+4.90</td>
+      <td>7.58 B</td>
+      <td>164.05 B</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Tether</td>
+      <td>USDT</td>
+      <td>1.02</td>
+      <td>-0.28</td>
+      <td>28.14 B</td>
+      <td>66.26 B</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>BNB</td>
+      <td>BNB</td>
+      <td>285.69</td>
+      <td>+4.99</td>
+      <td>804.82 M</td>
+      <td>44.89 B</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>USD Coin</td>
+      <td>USDC</td>
+      <td>1.00</td>
+      <td>-0.01</td>
+      <td>3.44 B</td>
+      <td>44 B</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>XRP</td>
+      <td>XRP</td>
+      <td>0.3597</td>
+      <td>+3.44</td>
+      <td>1.25 B</td>
+      <td>17.99 B</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>Binance USD</td>
+      <td>BUSD</td>
+      <td>1.00</td>
+      <td>-0.18</td>
+      <td>6.39 B</td>
+      <td>16.33 B</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>Cardano</td>
+      <td>ADA</td>
+      <td>0.3288</td>
+      <td>+11.69</td>
+      <td>894.47 M</td>
+      <td>11.14 B</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>Dogecoin</td>
+      <td>DOGE</td>
+      <td>0.07938</td>
+      <td>+8.01</td>
+      <td>743.43 M</td>
+      <td>10.42 B</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>Polygon</td>
+      <td>MATIC</td>
+      <td>0.8839</td>
+      <td>+6.35</td>
+      <td>445.12 M</td>
+      <td>7.59 B</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Um die Spalten “24h Volume” und “Market Cap” in einen Zahlenwert umzuwandeln, müssen die Buchstaben “B” (Billion/Milliarden) und “M” (Million/Millionen) umgewandelt werden.
+Das wird in der folgenden Funktion umgesetzt. Zahlen mit “B” werden mit 1000 multipliziert und Zahlen mit M so wie sie sind wieder ins CryptoDF eingesetzt. So werden die Werte in Millionen $ dargestellt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># B/Milliarden wird mit 1000 multipliziert und M/Millionen mit 1, sodass der Wert am Ende in Millionen angegeben ist</span>
+<span class="k">def</span> <span class="nf">transformvalues</span><span class="p">(</span><span class="n">columnname</span><span class="p">):</span>
+    <span class="nb">list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">CryptoDF</span><span class="p">[</span><span class="n">columnname</span><span class="p">]:</span>
+        <span class="n">split</span> <span class="o">=</span> <span class="n">val</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="n">parsed_value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">split</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">split</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span>
+            <span class="nb">list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">parsed_value</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">split</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;M&#39;</span><span class="p">:</span>
+            <span class="nb">list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">parsed_value</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">)</span>            
+    <span class="n">CryptoDF</span><span class="p">[</span><span class="n">columnname</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transformvalues</span><span class="p">(</span><span class="s2">&quot;Market Cap in M$&quot;</span><span class="p">)</span>
+<span class="n">transformvalues</span><span class="p">(</span><span class="s2">&quot;24h Volume in M$&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CryptoDF</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Pos</th>
+      <th>Name</th>
+      <th>Short</th>
+      <th>Price in $</th>
+      <th>24h Change in %</th>
+      <th>24h Volume in M$</th>
+      <th>Market Cap in M$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Bitcoin</td>
+      <td>BTC</td>
+      <td>17511.05</td>
+      <td>+1.57</td>
+      <td>16690</td>
+      <td>333610</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Ethereum</td>
+      <td>ETH</td>
+      <td>1361.07</td>
+      <td>+4.90</td>
+      <td>7580</td>
+      <td>164050</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Tether</td>
+      <td>USDT</td>
+      <td>1.02</td>
+      <td>-0.28</td>
+      <td>28140</td>
+      <td>66260</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>BNB</td>
+      <td>BNB</td>
+      <td>285.69</td>
+      <td>+4.99</td>
+      <td>804</td>
+      <td>44890</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>USD Coin</td>
+      <td>USDC</td>
+      <td>1.00</td>
+      <td>-0.01</td>
+      <td>3440</td>
+      <td>44000</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>XRP</td>
+      <td>XRP</td>
+      <td>0.3597</td>
+      <td>+3.44</td>
+      <td>1250</td>
+      <td>17990</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>Binance USD</td>
+      <td>BUSD</td>
+      <td>1.00</td>
+      <td>-0.18</td>
+      <td>6390</td>
+      <td>16329</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>Cardano</td>
+      <td>ADA</td>
+      <td>0.3288</td>
+      <td>+11.69</td>
+      <td>894</td>
+      <td>11140</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>Dogecoin</td>
+      <td>DOGE</td>
+      <td>0.07938</td>
+      <td>+8.01</td>
+      <td>743</td>
+      <td>10420</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>Polygon</td>
+      <td>MATIC</td>
+      <td>0.8839</td>
+      <td>+6.35</td>
+      <td>445</td>
+      <td>7590</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Zum Schluss wird nun die zuvor definierte “create_snapshot” Funktion für die relevanten Spalten aufgerufen und die dadurch erzeugten Zeilen ans HistoryDF angefügt.<br />
+Danach wird das erweiterte HistoryDF wieder als .csv abgespeichert, sodass es im nächsten Durchgang wieder eingelesen und erweitert werden kann.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HistoryDF</span> <span class="o">=</span> <span class="n">HistoryDF</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_snapshot</span><span class="p">(</span><span class="s2">&quot;Price in $&quot;</span><span class="p">),</span><span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">HistoryDF</span> <span class="o">=</span> <span class="n">HistoryDF</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_snapshot</span><span class="p">(</span><span class="s2">&quot;24h Volume in M$&quot;</span><span class="p">),</span><span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">HistoryDF</span> <span class="o">=</span> <span class="n">HistoryDF</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_snapshot</span><span class="p">(</span><span class="s2">&quot;24h Change in %&quot;</span><span class="p">),</span><span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">HistoryDF</span> <span class="o">=</span> <span class="n">HistoryDF</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_snapshot</span><span class="p">(</span><span class="s2">&quot;Market Cap in M$&quot;</span><span class="p">),</span><span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">HistoryDF</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;HistoryDF.csv&quot;</span><span class="p">)</span>
+<span class="n">HistoryDF</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>BTC</th>
+      <th>ETH</th>
+      <th>USDT</th>
+      <th>USDC</th>
+      <th>BNB</th>
+      <th>XRP</th>
+      <th>BUSD</th>
+      <th>DOGE</th>
+      <th>ADA</th>
+      <th>MATIC</th>
+      <th>timestamp</th>
+      <th>ValueCategory</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16845.38</td>
+      <td>1229.05</td>
+      <td>1.02</td>
+      <td>1.0</td>
+      <td>248.76</td>
+      <td>0.3494</td>
+      <td>1.0</td>
+      <td>0.07239</td>
+      <td>0.2576</td>
+      <td>0.796</td>
+      <td>2023-01-03 13:48:15.025826</td>
+      <td>Price in $</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>11620.0</td>
+      <td>3010.0</td>
+      <td>15110.0</td>
+      <td>1630.0</td>
+      <td>296.0</td>
+      <td>927.0</td>
+      <td>3250.0</td>
+      <td>256.0</td>
+      <td>137.0</td>
+      <td>154.0</td>
+      <td>2023-01-03 13:48:15.040849</td>
+      <td>24h Volume in M$</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.02</td>
+      <td>0.02</td>
+      <td>0.11</td>
+      <td>-0.02</td>
+      <td>-0.6</td>
+      <td>0.42</td>
+      <td>-0.0</td>
+      <td>-0.61</td>
+      <td>0.11</td>
+      <td>0.44</td>
+      <td>2023-01-03 13:48:15.054823</td>
+      <td>24h Change in %</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>321950.0</td>
+      <td>148900.0</td>
+      <td>66310.0</td>
+      <td>44710.0</td>
+      <td>39280.0</td>
+      <td>17360.0</td>
+      <td>16430.0</td>
+      <td>9490.0</td>
+      <td>8780.0</td>
+      <td>6820.0</td>
+      <td>2023-01-03 13:48:15.067823</td>
+      <td>Market Cap in M$</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>16845.38</td>
+      <td>1229.05</td>
+      <td>1.02</td>
+      <td>1.0</td>
+      <td>248.76</td>
+      <td>0.3494</td>
+      <td>1.0</td>
+      <td>0.07239</td>
+      <td>0.2576</td>
+      <td>0.796</td>
+      <td>2023-01-03 13:49:09.077439</td>
+      <td>Price in $</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1055</th>
+      <td>327150.0</td>
+      <td>155280.0</td>
+      <td>66460.0</td>
+      <td>43920.0</td>
+      <td>42590.0</td>
+      <td>17220.0</td>
+      <td>16420.0</td>
+      <td>9570.0</td>
+      <td>10030.0</td>
+      <td>7060.0</td>
+      <td>2023-01-08 18:30:03.766757</td>
+      <td>Market Cap in M$</td>
+    </tr>
+    <tr>
+      <th>1056</th>
+      <td>17511.05</td>
+      <td>1361.07</td>
+      <td>1.02</td>
+      <td>1.00</td>
+      <td>285.69</td>
+      <td>0.3597</td>
+      <td>1.00</td>
+      <td>0.07938</td>
+      <td>0.3288</td>
+      <td>0.8839</td>
+      <td>2023-01-09 17:16:08.192325</td>
+      <td>Price in $</td>
+    </tr>
+    <tr>
+      <th>1057</th>
+      <td>16690</td>
+      <td>7580</td>
+      <td>28140</td>
+      <td>3440</td>
+      <td>804</td>
+      <td>1250</td>
+      <td>6390</td>
+      <td>743</td>
+      <td>894</td>
+      <td>445</td>
+      <td>2023-01-09 17:16:08.211323</td>
+      <td>24h Volume in M$</td>
+    </tr>
+    <tr>
+      <th>1058</th>
+      <td>+1.57</td>
+      <td>+4.90</td>
+      <td>-0.28</td>
+      <td>-0.01</td>
+      <td>+4.99</td>
+      <td>+3.44</td>
+      <td>-0.18</td>
+      <td>+8.01</td>
+      <td>+11.69</td>
+      <td>+6.35</td>
+      <td>2023-01-09 17:16:08.224360</td>
+      <td>24h Change in %</td>
+    </tr>
+    <tr>
+      <th>1059</th>
+      <td>333610</td>
+      <td>164050</td>
+      <td>66260</td>
+      <td>44000</td>
+      <td>44890</td>
+      <td>17990</td>
+      <td>16329</td>
+      <td>10420</td>
+      <td>11140</td>
+      <td>7590</td>
+      <td>2023-01-09 17:16:08.237400</td>
+      <td>Market Cap in M$</td>
+    </tr>
+  </tbody>
+</table>
+<p>1060 rows × 12 columns</p>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="script-zum-automatisierten-abzug-von-tweets">
+<h2>3. Script zum automatisierten Abzug von Tweets<a class="headerlink" href="#script-zum-automatisierten-abzug-von-tweets" title="Permalink to this headline">#</a></h2>
+<section id="methode-zum-abrufen-der-twitter-api">
+<h3>3.1 Methode zum Abrufen der Twitter API<a class="headerlink" href="#methode-zum-abrufen-der-twitter-api" title="Permalink to this headline">#</a></h3>
+<p>Zu Beginn wird die bereits erstellte CSV-Datei eingelesen. Diese wurde initial mit allen benötigten Spalten angelegt und hier eingelesen. In den folgenden Codezeilen wird der Inhalt erstellt, welcher am Ende des Notebooks wieder in die CSV-Datei geschrieben wird.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TwitterDF</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;TwitterDF.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nun wird das BearerToken festgelegt, welches benötigt wird, um die Twitter API v2 zu nutzen.<br />
+Hierfür wurde ein Account auf <a class="reference external" href="https://developer.twitter.com">https://developer.twitter.com</a> mit Essential Access angelegt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">BearerToken</span> <span class="o">=</span> <span class="s1">&#39;AAAAAAAAAAAAAAAAAAAAANUSkAEAAAAAPuizqhzPfOPmzsUISkQoxq1zi%2BI%3DuAlv2ZACzeHIINh7xzXyqDgVZDvonTsN667e5vsoohZNDlXOri&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Für den Abzug von Tweets muss zunächst eine Client-Verbindung unter Verwendung des Bearer Token hergestellt werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create your client </span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">BearerToken</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nachfolgend wird eine Methode zum Crawlen von Tweets definiert. Dieser muss ein Suchkriterium (hier <em>crypto</em> ) mitgegeben werden, welches in den Tweets enthalten sein muss. Zudem ist eine Start- und Endzeit der Suche mitzugeben sowie die Anzahl maximaler Resultate. Der Essential Access erlaubt eine maximale Anzahl von 100 Tweets pro Request, eine Anzahl von 10 ist das Minimum.<br />
+In der Methode wird die Query durch das Suchkriterium, der Sprache Englisch und der Deaktivierung von Retweets erstellt. Diese sowie alle weiteren Parameter werden dann an die Methode <em>search_recent_tweets</em> des Clients übergeben. Dadurch crawlt die Methode Tweets, die den Suchkriterien entsprechen.<br />
+Anschließend wird über die Tweets iteriert und ihre Erstellzeit <em>created_at</em> sowie den Inhalt des Tweets <em>text</em> in ein Dictionary geschrieben. Diese wird um die Information des Suchkriteriums <em>crypto</em> erweitert.<br />
+Die Methode gibt das Dictionary als Rückgabewert zurück.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">getTweets</span><span class="p">(</span><span class="n">crypto</span><span class="p">,</span> <span class="n">start_time</span><span class="p">,</span> <span class="n">end_time</span><span class="p">,</span> <span class="n">max_results</span><span class="p">):</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="n">crypto</span> <span class="o">+</span> <span class="s1">&#39; lang:en -is:retweet&#39;</span>
+    <span class="n">tweets</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">search_recent_tweets</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="n">query</span><span class="p">,</span>
+                                     <span class="n">start_time</span><span class="o">=</span><span class="n">start_time</span><span class="p">,</span>
+                                     <span class="n">end_time</span><span class="o">=</span><span class="n">end_time</span><span class="p">,</span>
+                                     <span class="n">tweet_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;created_at&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;source&quot;</span><span class="p">],</span>
+                                     <span class="n">max_results</span> <span class="o">=</span> <span class="n">max_results</span>
+                                    <span class="p">)</span>      
+    <span class="n">tweet_info_ls</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># iterate over each tweet and corresponding details</span>
+    <span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">tweets</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+        <span class="n">tweet_info</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;created_at&#39;</span><span class="p">:</span> <span class="n">tweet</span><span class="o">.</span><span class="n">created_at</span><span class="p">,</span>
+            <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">tweet</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">tweet_info</span><span class="p">[</span><span class="s1">&#39;crypto&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">crypto</span>
+        <span class="n">tweet_info_ls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet_info</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tweet_info_ls</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aus dem zuvor erstellten CryptoDF werden die Namen aller Kryptowährungen in einer Liste gespeichert.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cryptoList</span><span class="o">=</span> <span class="n">CryptoDF</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span>
+<span class="n">cryptoList</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0        Bitcoin
+1       Ethereum
+2         Tether
+3       USD Coin
+4            BNB
+5            XRP
+6    Binance USD
+7       Dogecoin
+8        Cardano
+9        Polygon
+Name: Name, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ausfuhren-der-methode-abspeichern-der-daten">
+<h3>3.2 Ausführen der Methode &amp; Abspeichern der Daten<a class="headerlink" href="#ausfuhren-der-methode-abspeichern-der-daten" title="Permalink to this headline">#</a></h3>
+<p>Zur Vorbereitung des Methodenaufrufs werden die Parameter initialisiert. Als Startzeit wird die aktuelle Zeit minus 30 Minuten gesetzt (=Zeitpunkt des letzten Abzugs), Endzeit ist der aktuelle Zeitstempel. Als maximale Ergebnisanzahl wird das Maximum des Essential Access Kontos zur Twitter API v2 gesetzt (100) und ein leeres Dataframe erzeugt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">minutes</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">end_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">max_results</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">tweets_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nun wird über die Liste alle Kryptowährungen iteriert und der jeweilige Name der Kryptowährung der Methode <em>getTweets</em> als Parameter mitgegeben. Somit ist der jeweilige Name der Kryptowährung der Suchbegriff im Abzug der Tweets. Das Ergebnis wird dem eben initialisierten Dataframe <em>tweets_df</em> angehängt.<br />
+In der nächsten Iteration geschieht das gleiche mit der nächsten Kryptowährung. Somit werden für jede Kryptowährung 100 Tweets abgezogen und im Dataframe tweets_df gespeichert.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">crypto</span> <span class="ow">in</span> <span class="n">cryptoList</span><span class="p">:</span>
+    <span class="n">tweet_liste</span> <span class="o">=</span> <span class="n">getTweets</span><span class="p">(</span><span class="n">crypto</span><span class="p">,</span> <span class="n">start_time</span><span class="p">,</span> <span class="n">end_time</span><span class="p">,</span> <span class="n">max_results</span><span class="o">=</span><span class="n">max_results</span><span class="p">)</span>
+    <span class="n">tweets_df</span> <span class="o">=</span> <span class="n">tweets_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet_liste</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Das Dataframe wird anschließend als .csv gespeichert.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tweets_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;Tweets.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tweets_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>created_at</th>
+      <th>text</th>
+      <th>crypto</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2023-01-08 16:59:56+00:00</td>
+      <td>The latest Cryptoooh!! https://t.co/4xZsUP7CVw...</td>
+      <td>Bitcoin</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2023-01-08 16:59:56+00:00</td>
+      <td>#bitcoin #hex #PulseChain #HoneyBees\nI admire...</td>
+      <td>Bitcoin</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2023-01-08 16:59:55+00:00</td>
+      <td>Done and many thanks $BC #Bitcoin @hannywidia ...</td>
+      <td>Bitcoin</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023-01-08 16:59:53+00:00</td>
+      <td>@Breedlove22 @PeterZeihan @PeterZeihan can’t u...</td>
+      <td>Bitcoin</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2023-01-08 16:59:53+00:00</td>
+      <td>@PeterMcCormack @PeterZeihan @joerogan Additio...</td>
+      <td>Bitcoin</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>995</th>
+      <td>2023-01-08 16:50:34+00:00</td>
+      <td>$MASQ Metrics:\n\nUSD Price: 0.184076\nETH Hol...</td>
+      <td>Polygon</td>
+    </tr>
+    <tr>
+      <th>996</th>
+      <td>2023-01-08 16:50:29+00:00</td>
+      <td>@TokenizerIO 🍀 greengrower crypto mining game ...</td>
+      <td>Polygon</td>
+    </tr>
+    <tr>
+      <th>997</th>
+      <td>2023-01-08 16:50:26+00:00</td>
+      <td>Requesting $MATIC funds from the #Stakely Fauc...</td>
+      <td>Polygon</td>
+    </tr>
+    <tr>
+      <th>998</th>
+      <td>2023-01-08 16:50:22+00:00</td>
+      <td>@victalk_eth @Daren_Market is a Web3 Shopify, ...</td>
+      <td>Polygon</td>
+    </tr>
+    <tr>
+      <th>999</th>
+      <td>2023-01-08 16:50:00+00:00</td>
+      <td>@bitcaravan 🍀 greengrower crypto mining game 🍀...</td>
+      <td>Polygon</td>
+    </tr>
+  </tbody>
+</table>
+<p>1000 rows × 3 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="sentiment-analysis">
+<h3>3.3 Sentiment Analysis<a class="headerlink" href="#sentiment-analysis" title="Permalink to this headline">#</a></h3>
+<p>Ziel des nächsten Schritts ist es, die eben abgezogenen Tweets in <em>positiv</em> , <em>negativ</em> und <em>neutral</em> zu klassifizieren. Dafür wird die Python Bibliothek “TextBlob” genutzt. (<a class="reference external" href="https://textblob.readthedocs.io/en/dev/quickstart.html">https://textblob.readthedocs.io/en/dev/quickstart.html</a>)</p>
+<p>Die Tweets, welche der Methode als Parameter zusammen mit dem Namen der jeweiligen Kryptowährung mitgegeben werden, werden zunächst in Textblob Objekte umgewandelt.<br />
+Für diese kann die Property .sentiment aufgerufen werden, welche ein Tupel aus Polarity und Subjectivity zurückgibt. Beides sind float Werte, wobei Polarity in der Range [-1.0 , 1.0] angegeben wird und kleine Werte negative Äußerungen und große Werte für positive stehen. Subjectivity wird in der Range [0.0 , 1.0] angegeben, wobei 0.0 sehr objektiv und 1.0 sehr subjektiv ist.<br />
+In diesem Projekt ist nur die Polarity von Interesse, weshalb nur dieser Wert pro Tweet in der Liste <em>sentiment_values</em> gespeichert wird.<br />
+Anschließend wird über die Liste iteriert und Werte größer Null als positiv, Werte kleiner Null als negativ und Werte gleich Null als neutral abgespeichert.<br />
+In einem Dictionary wird der aktuelle Zeitstempel, der Name der Kryptowährung sowie die Anzahl an positiver, negativer und neutraler Tweets gespeichert. Zudem wird der Wert <em>count</em> als die Anzahl aller untersuchten Tweets gespeichert.<br />
+Das Dictionary ist der Rückgabewert der Methode.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sentimentClassification</span><span class="p">(</span><span class="n">tweets</span><span class="p">,</span> <span class="n">crypto</span><span class="p">):</span>
+    <span class="c1"># Classify</span>
+    <span class="n">sentiment_objects</span> <span class="o">=</span> <span class="p">[</span><span class="n">TextBlob</span><span class="p">(</span><span class="n">tweet</span><span class="p">)</span> <span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">tweets</span><span class="p">]</span>
+    <span class="c1"># Create a list of polarity values and tweet text</span>
+    <span class="n">sentiment_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">tweet</span><span class="o">.</span><span class="n">sentiment</span><span class="o">.</span><span class="n">polarity</span> <span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">sentiment_objects</span><span class="p">]</span>
+    <span class="c1"># Initialize variables, &#39;pos&#39;, &#39;neg&#39;, &#39;neu&#39;.</span>
+    <span class="n">pos</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">neg</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">neu</span><span class="o">=</span><span class="mi">0</span>
+
+    <span class="c1">#Create a loop to classify the tweets as Positive, Negative, or Neutral.</span>
+    <span class="c1"># Count the number of each.</span>
+
+    <span class="k">for</span> <span class="n">items</span> <span class="ow">in</span> <span class="n">sentiment_values</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">items</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="o">+</span><span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">items</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">neg</span><span class="o">=</span><span class="n">neg</span><span class="o">+</span><span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">neu</span><span class="o">=</span><span class="n">neu</span><span class="o">+</span><span class="mi">1</span>
+        
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(),</span>
+            <span class="s1">&#39;cypto&#39;</span><span class="p">:</span> <span class="n">crypto</span><span class="p">,</span>
+            <span class="s1">&#39;pos&#39;</span><span class="p">:</span> <span class="n">pos</span><span class="p">,</span>
+            <span class="s1">&#39;neg&#39;</span><span class="p">:</span> <span class="n">neg</span><span class="p">,</span>
+            <span class="s1">&#39;neu&#39;</span><span class="p">:</span> <span class="n">neu</span><span class="p">,</span>
+            <span class="s1">&#39;count&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">tweets</span><span class="p">)</span>
+        <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Die eben definierte Methode muss nun je Kryptowährung aufgerufen werden. Dafür wird wieder über die cryptoList iteriert und das tweets_df auf die Tweets der jeweiligen Kryptowährung eingeschränkt. Diese Tweets werden der Methode sentimentClassification zusammen mit dem Namen der Kryptowährung als Parameter mitgegeben. Das zurückgegebene Dictionary wird dem TwitterDF angehängt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">crypto</span> <span class="ow">in</span> <span class="n">cryptoList</span><span class="p">:</span>
+    <span class="n">tweets</span> <span class="o">=</span> <span class="n">tweets_df</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tweets_df</span><span class="p">[</span><span class="s1">&#39;crypto&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">crypto</span><span class="p">]</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">sentimentClassification</span><span class="p">(</span><span class="n">tweets</span><span class="p">,</span> <span class="n">crypto</span><span class="p">)</span>
+    <span class="n">TwitterDF</span> <span class="o">=</span> <span class="n">TwitterDF</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Das TwitterDF wird in der CSV-Datei gespeichert, welche zu Beginn des Twitter-Teils im Notebook eingelesen wurde.<br />
+Da das Notebook alle 30 Minuten ausgeführt wird, wird das TwitterDF somit alle 30 Minuten erweitert um eine Zeile je Kryptowährung mit aktuellem Zeitstempel und der Anzahl positiver, negativer und neutraler Tweets je Währung.<br />
+Diese Informationen können in einem lokalen Notebook analyisiert werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TwitterDF</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;TwitterDF.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TwitterDF</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>time</th>
+      <th>cypto</th>
+      <th>pos</th>
+      <th>neg</th>
+      <th>neu</th>
+      <th>count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2023-01-03 14:17:12.831583</td>
+      <td>Bitcoin</td>
+      <td>3</td>
+      <td>1</td>
+      <td>6</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2023-01-03 14:17:12.851585</td>
+      <td>Ethereum</td>
+      <td>5</td>
+      <td>0</td>
+      <td>5</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2023-01-03 14:17:12.871585</td>
+      <td>Tether</td>
+      <td>3</td>
+      <td>0</td>
+      <td>7</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023-01-03 14:17:12.892585</td>
+      <td>USD Coin</td>
+      <td>3</td>
+      <td>1</td>
+      <td>6</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2023-01-03 14:17:12.911587</td>
+      <td>BNB</td>
+      <td>4</td>
+      <td>1</td>
+      <td>5</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2023-01-03 14:17:12.927587</td>
+      <td>XRP</td>
+      <td>7</td>
+      <td>0</td>
+      <td>3</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2023-01-03 14:17:12.947587</td>
+      <td>Binance USD</td>
+      <td>0</td>
+      <td>5</td>
+      <td>5</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2023-01-03 14:17:12.964587</td>
+      <td>Dogecoin</td>
+      <td>5</td>
+      <td>0</td>
+      <td>5</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2023-01-03 14:17:12.982587</td>
+      <td>Cardano</td>
+      <td>3</td>
+      <td>3</td>
+      <td>4</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2023-01-03 14:17:13.000587</td>
+      <td>Polygon</td>
+      <td>3</td>
+      <td>2</td>
+      <td>5</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Welcome to your Jupyter Book</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Visualization.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Web &amp; - Social Media Analytics Projekt:</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
